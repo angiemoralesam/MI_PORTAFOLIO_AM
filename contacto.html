@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contacto</title>
+    <link rel="stylesheet" href="style_ contacto.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Grand+Hotel&family=Jersey+25&family=Londrina+Outline&family=Mea+Culpa&family=Sedan+SC&family=Sedan:ital@0;1&family=Tangerine:wght@400;700&family=Zeyada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3fdae96a96.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="contenedor">
+    <header>
+<nav class="navbar">
+  <div class="brand">
+   <h2 class="subtitulo"><span>Portafolio CV</span></h2>
+  </div>
+  <br>
+  <ul class="menu">
+    <li class="fa-solid fa-house"><a href="inicio.html" class="active">INICIO</a></li> 
+    <li class="fa-solid fa-person-dress"><a href="sobre_mi.html">SOBRE MI</a></li>
+    <li class="fa-solid fa-mug-hot"><a href="proyectos.html">PROYECTOS</a></li>
+    <li class="fa-solid fa-address-book"><a href="contacto.html">CONTACTO</a></li>
+  </ul>
+</nav>
+</header>
+<br>
+    <main class="main">
+  <div class="contact-section">
+    <div class="contact-heading">
+      <h2 class="subtitulo">CONTACTARSE</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="container-contact">
+      <img src="imagenes/contacto.jpeg" alt="">
+      <BR></BR>
+      
+      <div class="contact-form">
+        <h2>Envíeme un mensaje...</h2>
+        
+        <form class="form-group" id="form" action="https://formspree.io/f/xayrvlqn" method="POST">
+          <label for="name">Nombre Completo <span>*</span></label>
+          <input name="name" required type="text" id="name" placeholder="name" class="input">
+          <label for="email">Correo electrónico <span>*</span></label>
+          <input name="email" type="text" id="email" required placeholder="Correo@gmail.com" class="input">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" id="" cols="30" rows="10" placeholder="Deja tu mensaje aquí..."></textarea>
+          <div class="button-content">
+          <button type="submit" class="btn-submit ">Enviar </button>
+        </form>
+      </div>
+        <p>
+          Mi Hoja de vida en 
+          <a href="https://www.linkedin.com/in/angie-marcela-morales-ni%C3%B1o-504b2b145/">linkedin</a>
+      </p>
+      </div>
+    </div>
+</main>
+<br>
+</div>
+<footer class="footer"> 
+  <div class="footer-content">
+    <h2>Angie Marcela Morales niño</h2>
+    <h5>Fronted Developer</h5>
+  </div>
+  <div class="social-networks">
+    <a href="https://www.instagram.com/angie_morales2011/?next=%2F&hl=es"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/in/angie-marcela-morales-ni%C3%B1o-504b2b145/"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/angiemoralesam"><i class="fa-brands fa-square-github"></i></a>
+  </div>
+</footer>
+<script >
+  const button = document.querySelector("button")
+  button.addEventListener("click",
+function () {
+  alert("Gracias por contactarme, te escribire pronto")
+  })
+  const $form = document.querySelector('#form')
+  $form.addEventListener('submit', handleSubmit)
+  async function handleSubmit(event) {
+    event.preventDefault()
+    const form = new FormData(this)
+    const response = await fetch(this.action, {
+            method:"POST",
+            body: form,
+            Headers: {
+                Accept: 'aplication/json'
+                
+            }
+ })
+ }
+        
+</script>
+</body>
+</html>
